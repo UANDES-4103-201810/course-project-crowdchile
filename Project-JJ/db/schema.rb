@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_13_231454) do
+ActiveRecord::Schema.define(version: 2018_05_01_210217) do
 
-  create_table "admins", force: :cascade do |t|
-    t.integer "userprofile_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "guests", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_04_13_231454) do
   end
 
   create_table "promises", force: :cascade do |t|
+    t.integer "project_id"
     t.text "description"
     t.integer "price"
     t.datetime "created_at", null: false
@@ -53,6 +49,20 @@ ActiveRecord::Schema.define(version: 2018_04_13_231454) do
     t.string "country"
     t.string "profession"
     t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_projects", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
