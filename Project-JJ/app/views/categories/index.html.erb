@@ -1,27 +1,46 @@
-<p id="notice"><%= notice %></p>
+<head>
+<style>
 
-<h1>Categories</h1>
+.btn-group-vertical button {
+    background-color: #4CAF50; 
+    border: 1px solid black; 
+    vertical-align: middle;
+    color: white; 
+    padding: 10px 24px; 
+    cursor: pointer; 
+    width: 100%; 
+    display: block; 
+}
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+.btn-group button:not(:last-child) {
+    border-bottom: none; 
+}
 
-<br>
 
-<%= link_to 'New Category', new_category_path %>
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+</style>
+
+	
+</head>
+<body>
+	<h1> HOLA MUNDO </h1>
+	
+	<div class="btn-group-vertical" style="width: 100%">
+	  <button>Music</button>
+	  <button>Animals</button>
+	  <button>Medical</button>
+	  <button>Technology</button>
+	  <button>Social</button>
+	  <button>Education</button>
+	  <button>Ecologic</button>
+	  <button>Sports</button>
+	  <button>Food</button>
+	  <button>Applications</button>
+ 	  <button>Architecture</button>
+
+	</div>					
+	
+</body>
