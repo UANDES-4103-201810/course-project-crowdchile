@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  
+
   <head>
 
     <meta charset="utf-8">
@@ -8,12 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>2 Col Portfolio - Start Bootstrap Template</title>
+    <title>CrowdChile</title>
 
-    <!-- Bootstrap core CSS -->
+
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+
     <link href="css/2-col-portfolio.css" rel="stylesheet">
     <title>ProjectJj</title>
     <%= csrf_meta_tags %>
@@ -41,7 +41,7 @@
 </html>
 <html lang="en">
 
- 
+
   <body>
 
     <!-- Navigation -->
@@ -53,22 +53,58 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/sign_in">Sign in</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/sign_up">Sign up</a>
-            </li>
+            <%- if user_signed_in? %>
+              <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favorite projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Create a project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <input type="text"  placeholder="Search project"</input>
+              </li>
+  	          <li class="nav-item">
+                <a class="nav-link" href="/users/sign_up">Search</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
+              </li>
+            <%else%>
+              <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+              </li>
+
+              <li class="nav-item">
+                <input type="text"  placeholder="Search project"</input>
+              </li>
+  	          <li class="nav-item">
+                <a class="nav-link" href="/users/sign_up">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/sign_in">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/sign_up">Sign up</a>
+              </li>
+
+
+            <% end %>
+
+
+
           </ul>
         </div>
       </div>
     </nav>
-
