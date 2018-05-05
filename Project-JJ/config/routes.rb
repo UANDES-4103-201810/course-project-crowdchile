@@ -1,6 +1,7 @@
 
 
 Rails.application.routes.draw do
+  resources :user_fund_projects
   devise_for :users 	
   resources :user_projects
   resources :categories
