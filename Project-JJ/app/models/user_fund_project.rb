@@ -1,2 +1,4 @@
 class UserFundProject < ApplicationRecord
+  
+
 end
