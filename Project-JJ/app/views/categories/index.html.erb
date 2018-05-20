@@ -1,71 +1,43 @@
 <head>
 <style>
 
-.btn-group-vertical button {
-    background-color: #0000FF;
-    border: 1px solid black;
-    vertical-align: center;
-    color: white;
-    padding: 10px 24px;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.aaaa {
-  background-color: #4CAF50;
-  border: 1px solid black;
-  vertical-align: center;
-  text-align: center;
-  color: white;
-  padding: 10px 24px;
-  cursor: pointer;
-  width: 100%;
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-
-
-
-.btn-group button:not(:last-child) {
-    border-bottom: none;
-}
-
-
-.btn-group button:hover {
-    background-color: #3e8e41;
-}
 </style>
 
 
 </head>
 <body>
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>
 
 
-	<div class="btn-group-vertical" style="width: 100%">
-	  <a class="aaaa" href="/categories/1">Music - Browse through the best music related projects</a>
-    <a class="aaaa" href="/categories/2">Animals - Help the flora and fauna of the world through this category</a>
-    <a class="aaaa" href="/categories/3">Medical - Innovation and medicine at the service of the community</a>
-    <a class="aaaa" href="/categories/4">Technology - New and crazy projects, from robots to cellphones</a>
-    <a class="aaaa" href="/categories/5">Social - Social help oriented projects</a>
-    <a class="aaaa" href="/categories/6">Education - Education for all people all around the world and more</a>
-    <a class="aaaa" href="/categories/7">Ecologic - Help the planet through ecologic contributions</a>
-    <a class="aaaa" href="/categories/8">Sports - The most passionate projects of the web</a>
-    <a class="aaaa" href="/categories/9">Food  Delightful and beautiful crowdfunding</a>
-    <a class="aaaa" href="/categories/10">Applications - Cellphone orientes applications, smartphones</a>
-    <a class="aaaa" href="/categories/11">Architecture - Constructions, bridges and more</a>
 
-
-	</div>
-
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white"> <i>If you cant find your project/category, feel free to use our searchbox! ↗↗</i></p>
-    </div>
-
-  </footer>
+ 
 
 </body>
