@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :project
-	has_one :user_profile
+	
 	has_one :wishlist
   has_one :user_role
 end
