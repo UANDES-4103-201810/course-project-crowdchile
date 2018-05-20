@@ -31,10 +31,7 @@
     <%= form.text_field :category %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
+<%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="field">
     <%= form.label :deliverydate %>
