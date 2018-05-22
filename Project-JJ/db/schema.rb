@@ -45,21 +45,6 @@ ActiveRecord::Schema.define(version: 2018_05_05_223128) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_profiles", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.text "description"
-    t.string "name"
-    t.string "lastname"
-    t.integer "telephone"
-    t.string "mail"
-    t.string "country"
-    t.string "profession"
-    t.integer "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "user_projects", force: :cascade do |t|
     t.integer "user_id"
     t.integer "project_id"
@@ -75,7 +60,16 @@ ActiveRecord::Schema.define(version: 2018_05_05_223128) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "userprofile_id"
+    t.string "username"
+    t.string "password"
+    t.text "description"
+    t.string "name"
+    t.string "lastname"
+    t.integer "telephone"
+    t.string "mail"
+    t.string "country"
+    t.string "profession"
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
