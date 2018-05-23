@@ -21,6 +21,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
     <style>
       body {
 	background-color: lightblue;
@@ -74,11 +75,9 @@
                 <a class="nav-link"><%= link_to "Profile", current_user %></a>
               </li>
               <li class="nav-item">
-                <input type="text"  placeholder="Search project"</input>
+                
               </li>
-  	          <li class="nav-item">
-                <a class="nav-link" href="/users/sign_up">Search</a>
-              </li>
+  	          
               <li class="nav-item">
                 <a class="nav-link" href="/users/sign_out">Log Out</a>
               </li>
@@ -88,11 +87,9 @@
               </li>
 
               <li class="nav-item">
-                <input type="text"  placeholder="Search project"</input>
-              </li>
-  	          <li class="nav-item">
-                <a class="nav-link" href="/users/sign_up">Search</a>
-              </li>
+		
+                
+              </li>  	          
               <li class="nav-item">
                 <a class="nav-link" href="/users/sign_in">Sign in</a>
               </li>

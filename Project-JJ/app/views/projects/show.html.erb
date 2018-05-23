@@ -1,40 +1,61 @@
+<style>
+
+
+html, body { height: 100%; padding: 0; margin: 0; }
+div { width: 50%; height: 50%; float: left; }
+#div1 { background: #0080FF; }
+#descriptiondiv { background: #3399FF; }
+#specificationsdiv { background: #66B2FF; }
+#div4 { background: #99CCFF; }
+
+</style>
+
+
+<div id="div1">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @project.title %>
+  <h1> <strong>Project name:</strong> <%= @project.title %></h1>
+</p>
+
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+</div>
+<div id="descriptiondiv">
+	<p>
+  		<h2> <strong>Description:</strong> </h2>
+		<%= @project.description %>   		
+	</p>
+</div>
+<div id="specificationsdiv">
+<p>
+  <h2> <strong>Category:</strong> <%= @project.category %> </h2>
+  
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @project.description %>
+  <h2> <strong>User:</strong> <%= @project.user_id %> </h2>   
 </p>
 
 <p>
-  <strong>Donationamount:</strong>
-  <%= @project.donationamount %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
-
-<p>
-  <strong>Deliverydate:</strong>
-  <%= @project.deliverydate %>
+  <h3> <strong>Deliverydate:</strong> <%= @project.deliverydate %> </h3>
+  
 </p>
 
 <p>
   <strong>Promise:</strong>
   <%= @project.promise_id %>
 </p>
+<p>
+  <strong>Donationamount:</strong>
+  <%= @project.donationamount %>
+</p>
+
+</div>
+<div id="div4">
+</div>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+

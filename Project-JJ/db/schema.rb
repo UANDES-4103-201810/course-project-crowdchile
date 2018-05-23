@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_05_05_223128) do
     t.integer "user_id"
     t.datetime "deliverydate"
     t.integer "promise_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

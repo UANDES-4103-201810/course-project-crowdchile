@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :category %>
-    <%= form.collection_select :category, Category.order(:id), :id, :name, include_blank: true %>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
   </div>
 
 <%= form.hidden_field :user_id, value: current_user.id %>
