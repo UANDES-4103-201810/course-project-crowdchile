@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2018_05_05_223128) do
     t.string "title"
     t.text "description"
     t.integer "donationamount"
-    t.string "category"
     t.integer "user_id"
     t.datetime "deliverydate"
     t.integer "promise_id"
