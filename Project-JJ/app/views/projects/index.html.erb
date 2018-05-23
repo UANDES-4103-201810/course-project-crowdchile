@@ -6,7 +6,13 @@
 <body>
 
 
+<%= form_tag({:controller => "projects", :action => "index"}, :method => :get) do %>
 
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+
+    <%= submit_tag "Buscar", :name => nil %>
+
+<% end %>
 
 
 
