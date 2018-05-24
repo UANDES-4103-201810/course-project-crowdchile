@@ -1,29 +1,60 @@
+<style>
+
+
+html, body { height: 100%; padding: 0; margin: 0; }
+div { width: 50%; height: 50%; float: left; }
+#divbottom {width: 100%; height: 50%; float: bottom;}
+#div1 { background: #0080FF; }
+#descriptiondiv { background: #3399FF; }
+#specificationsdiv { background: #66B2FF; }
+table {
+  border-collapse: separate;
+  border-spacing: 50px 0;
+}
+
+
+</style>
+
+<div id="div1">
+<h1> User information </h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>name:</strong>
+  <strong>First name:</strong>
   <%= @user.name %>
 </p>
 <p>
-<strong>lastname:</strong>
+<strong>Last name:</strong>
    <%= @user.lastname %>
 </p>
-<strong>email:</strong>
+<strong>eMail:</strong>
   <%= @user.email %>
 </p>
-<strong>telephone:</strong>
+<strong>Telephone:</strong>
   <%= @user.telephone %>
 </p>
-<strong>description:</strong>
+<strong>Description:</strong>
   <%= @user.description %>
 </p>
-<strong>age:</strong>
+<strong>Age:</strong>
   <%= @user.age %>
 </p>
-<strong>country:</strong>
+<strong>Country:</strong>
   <%= @user.country %>
 </p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
 
+
+</div>
+<div id="descriptiondiv">
+
+<h2> Profile picture </h2>
+
+	
+</div>
+<div id="divbottom">
+<h2> Projects created by this user: </h2>
 <table>
   <thead>
     <tr>
@@ -46,7 +77,7 @@
 		<td><%= project.title %></td>
 		<td><%= project.description %></td>
 		<td><%= project.donationamount %></td>
-		<td><%= project.category %></td>
+		<td><%= project.category.name %></td>
 		<td><%= project.user_id %></td>
 		<td><%= project.deliverydate %></td>
 		<td><%= project.promise_id %></td>
@@ -59,5 +90,14 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
+
+
+
+
+
+
+
+
+
+
