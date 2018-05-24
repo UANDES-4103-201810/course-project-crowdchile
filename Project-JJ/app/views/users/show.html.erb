@@ -8,9 +8,22 @@ div { width: 50%; height: 50%; float: left; }
 #descriptiondiv { background: #3399FF; }
 #specificationsdiv { background: #66B2FF; }
 table {
-  border-collapse: separate;
-  border-spacing: 50px 0;
+  border-collapse: separate;  
+  width: 100%;
 }
+table td, table th {
+	border: 1px solid #ddd;
+	
+}
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table th {padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #000066;
+    color: white;
+}
+	
 
 
 </style>
@@ -27,18 +40,23 @@ table {
 <strong>Last name:</strong>
    <%= @user.lastname %>
 </p>
+<p>
 <strong>eMail:</strong>
   <%= @user.email %>
 </p>
+<p>
 <strong>Telephone:</strong>
   <%= @user.telephone %>
 </p>
+<p>
 <strong>Description:</strong>
   <%= @user.description %>
 </p>
+<p>
 <strong>Age:</strong>
   <%= @user.age %>
 </p>
+<p>
 <strong>Country:</strong>
   <%= @user.country %>
 </p>
@@ -60,7 +78,7 @@ table {
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Donationamount</th>
+      <th>Donation amount</th>
       <th>Category</th>
       <th>User</th>
       <th>Deliverydate</th>
