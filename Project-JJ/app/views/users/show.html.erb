@@ -60,7 +60,11 @@ table th {padding-top: 12px;
 <strong>Country:</strong>
   <%= @user.country %>
 </p>
-<%= link_to 'Edit', edit_user_registration_path(@user) %> |
+
+<%- if current_user.try(:admin) or @user.id == current_user.try(:id) %>
+	<%= link_to 'Edit', edit_user_registration_path(@user) %>
+<% end %>
+
 <%= link_to 'Back', users_path %>
 
 
@@ -89,7 +93,7 @@ table th {padding-top: 12px;
 
   <tbody>
     <% @projects.each do |project| %>
-	<% if project.user_id == current_user.id %>
+	<% if project.user_id == @user.id %>
 	
 	      <tr>
 		<td><%= project.title %></td>
@@ -100,8 +104,10 @@ table th {padding-top: 12px;
 		<td><%= project.deliverydate %></td>
 		<td><%= project.promise_id %></td>
 		<td><%= link_to 'Show', project %></td>
-		<td><%= link_to 'Edit', edit_project_path(project) %></td>
-		<td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<%- if project.user_id == current_user.try(:id) or current_user.try(:admin) %>
+			<td><%= link_to 'Edit', edit_project_path(project) %></td>
+			<td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
 	      </tr>
 	<% end %>
     <% end %>

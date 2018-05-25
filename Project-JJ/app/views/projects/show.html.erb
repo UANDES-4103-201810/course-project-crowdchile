@@ -19,8 +19,9 @@ div { width: 50%; height: 50%; float: left; }
 </p>
 
 
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<%- if current_user.try(:id) == @project.user_id  or current_user.try(:admin?) %>
+	<%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
 <%= link_to 'Back', projects_path %>
 </div>
 <div id="descriptiondiv">
