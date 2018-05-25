@@ -4,26 +4,43 @@
 
 <table>
   <thead>
-    <tr>
-      <th>User</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+	    <tr>
+	      <th>Title</th>
+	      <th>Description</th>
+	      <th>Donationamount</th>
+	      <th>Category</th>
+	      <th>Deliverydate</th>
+	      <th>Promise</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
   <tbody>
     <% @wishlists.each do |wishlist| %>
       <tr>
-        <td><%= wishlist.user_id %></td>
-        <td><%= wishlist.project_id %></td>
-        <td><%= link_to 'Show', wishlist %></td>
-        <td><%= link_to 'Edit', edit_wishlist_path(wishlist) %></td>
-        <td><%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+	<% if wishlist.user_id == current_user.id %>
+	<table>
+	  
+
+	  <tbody>
+	    <% @projects.each do |project| %>
+		<% if wishlist.project_id == project.id %>
+	      <tr>
+		<td><%= project.title %></td>
+		<td><%= project.description %></td>
+		<td><%= project.donationamount %></td>
+		<td><%= project.category.name %></td>
+		<td><%= project.deliverydate %></td>
+		<td><%= project.promise_id %></td>
+		<td><%= link_to 'Show', project %></td>
+	      </tr>
+	    <% end %>
+		<% end %>
+	  </tbody>
+	</table>
+		<% end %>
+	      </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Wishlist', new_wishlist_path %>
