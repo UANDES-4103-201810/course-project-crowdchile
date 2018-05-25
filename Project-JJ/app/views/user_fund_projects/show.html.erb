@@ -9,6 +9,10 @@
   <strong>Project:</strong>
   <%= @user_fund_project.project_id %>
 </p>
-
+<p>
+  <strong>amount:</strong>
+  <%= @user_fund_project.amount %>
+</p>
 <%= link_to 'Edit', edit_user_fund_project_path(@user_fund_project) %> |
 <%= link_to 'Back', user_fund_projects_path %>
+

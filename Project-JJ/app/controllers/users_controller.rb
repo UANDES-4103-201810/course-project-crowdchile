@@ -10,6 +10,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   # GET /users/1.json
   def show
      @projects = Project.all
+	@user_fund_projects = UserFundProject.all
 	
   end
 

@@ -60,6 +60,12 @@ div { width: 50%; height: 50%; float: left; }
 <div id="div4">
   <%= image_tag @project.image.url(:large), :class => "style-image" %>
   <td><%= button_to "Add project to wishlist", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
+  <td><%= button_to "Donate 1", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 1, :method => :"post" %>
+  <td><%= button_to "Donate 10", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 10, :method => :"post" %>
+  <td><%= button_to "Donate 20", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 20, :method => :"post" %>
+  <td><%= button_to "Donate 30", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 100, :method => :"post" %>
+ </td>
+
 </div>
 
 

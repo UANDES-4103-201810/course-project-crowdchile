@@ -3,7 +3,7 @@ class CreateUserFundProjects < ActiveRecord::Migration[5.2]
     create_table :user_fund_projects do |t|
       t.integer :user_id
       t.integer :project_id
-
+      t.interger :amount
       t.timestamps
     end
   end

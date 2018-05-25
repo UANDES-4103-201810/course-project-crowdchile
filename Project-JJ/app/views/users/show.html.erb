@@ -4,8 +4,8 @@
 html, body { height: 100%; padding: 0; margin: 0; }
 div { width: 50%; height: 50%; float: left; }
 #divbottom {width: 100%; height: 50%; float: bottom;}
-#div1 { background: #0080FF; }
-#descriptiondiv { background: #3399FF; }
+#div1 { width: 30%; background: #0080FF; }
+#descriptiondiv { width: 70%; background: #3399FF; }
 #specificationsdiv { background: #66B2FF; }
 table {
   border-collapse: separate;  
@@ -23,6 +23,7 @@ table th {padding-top: 12px;
     background-color: #000066;
     color: white;
 }
+
 	
 
 
@@ -71,7 +72,51 @@ table th {padding-top: 12px;
 </div>
 <div id="descriptiondiv">
 
-<h2> Profile picture </h2>
+<h3> Funded Projects </h3>
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  <thead>
+	    <tr>
+	      <th>Title</th>
+	      
+	      <th>Donationamount</th>
+	      <th>Category</th>
+	      	      
+		<th> amount </th>
+		<th colspan="3"></th>
+	    </tr>
+	  </thead>
+  <tbody>
+    <% @user_fund_projects.each do |user_fund_projects| %>
+      <tr>
+	<% if user_fund_projects.user_id == current_user.id %>
+	<table>
+	  
+
+	  <tbody>
+	    <% @projects.each do |project| %>
+		<% if user_fund_projects.project_id == project.id %>
+	      <tr>
+		<td><%= project.title %></td>
+		
+		<td><%= project.donationamount %></td>
+		<td><%= project.category.name %></td>
+		
+		<td><%= user_fund_projects.amount %></td>
+		<td><%= link_to 'Show', project %></td>
+	      </tr>
+	    <% end %>
+		<% end %>
+	  </tbody>
+	</table>
+		<% end %>
+	      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 	
 </div>
