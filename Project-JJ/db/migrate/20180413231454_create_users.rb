@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :country
       t.string :profession
       t.integer :age
-      t.boolean :admin
+      
 
       t.timestamps
     end
