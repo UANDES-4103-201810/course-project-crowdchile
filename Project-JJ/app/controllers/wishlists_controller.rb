@@ -12,6 +12,8 @@ class WishlistsController < ApplicationController
   def show
   end
 
+ 
+
   # GET /wishlists/new
   def new
     @wishlist = Wishlist.new
