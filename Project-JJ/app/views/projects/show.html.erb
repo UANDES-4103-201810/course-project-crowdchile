@@ -57,6 +57,7 @@ div { width: 50%; height: 50%; float: left; }
 </div>
 <div id="div4">
   <%= image_tag @project.image.url(:large) %>
+  <td><%= button_to "Yes", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
 </div>
 
 

@@ -5,11 +5,13 @@ class WishlistsController < ApplicationController
   # GET /wishlists.json
   def index
     @wishlists = Wishlist.all
+    @projects = Project.all
   end
 
   # GET /wishlists/1
   # GET /wishlists/1.json
   def show
+	
   end
 
  
@@ -71,6 +73,6 @@ class WishlistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wishlist_params
-      params.require(:wishlist).permit(:user_id, :project_id)
+      params.permit(:user_id, :project_id)
     end
 end
