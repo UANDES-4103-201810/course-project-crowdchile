@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.datetime :deliverydate
       t.integer :promise_id
       t.integer :category_id
+      t.boolean :outstanding
 
       t.timestamps
     end
