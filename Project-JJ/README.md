@@ -1,24 +1,43 @@
 # README
 Juan Valdivieso and Juan Manuel Campos
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+We managed to complete the following features:
 
-* Ruby version
+Registered user
+-Profile
+-User projects
 
-* System dependencies
+Admin user
+-Users
+-Categories
 
-* Configuration
+2) Registered user
+-Profile
+-All projects (With searchbox inside of /projects)
+-User projects (In user profile)
+-Project categories
+-Funded projects (In user profile)
 
-* Database creation
+Admin user
+-Users
+-Projects
+-Categories
 
-* Database initialization
+The admin user also has permission to delete and modify certain objects, as well as the user with his own objects.
 
-* How to run the test suite
+3) File controller
+-Image upload
+-Image download
 
-* Services (job queues, cache servers, search engines, etc.)
+4) Extra features:
+-Platform feedback (upon registration, creation of project, etc.)
+-Basic version to fund a project (Not completely)
+-Mark project as outstanding (only with boolean value)
 
-* Deployment instructions
+5) Bootstrap is integrated
 
-* ...
+We could complete the following tasks:
+-Project promises on users
+-The outstanding projects must appear in the start page
+-The funding isnt completely functional, lacks donating specific amount and progress bar, doesnt track donation progress
+-The css is clearly not complete

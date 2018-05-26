@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end 
 
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
