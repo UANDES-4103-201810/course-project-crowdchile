@@ -41,3 +41,4 @@ We could complete the following tasks:
 -The outstanding projects must appear in the start page
 -The funding isnt completely functional, lacks donating specific amount and progress bar, doesnt track donation progress
 -The css is clearly not complete
+-The edit buttons inside each profile which are used to edit the users own profile are blue and cant be seen, but they are present (right below user information)
