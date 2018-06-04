@@ -61,6 +61,14 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+	    <li class="nav-item">
+		<%= form_tag search_projects_path do |form|%>
+ 		<input class='search full-width' id='searchbar' name='query' placeholder='Search Projects' type='string' autocomplete='off'>
+		<div class="field">
+  		</div>
+		<% end %>
+              </a>
+            </li>
             <%- if user_signed_in? %>
               <li class="nav-item">
                 <a class="nav-link" href="/categories">Categories</a>

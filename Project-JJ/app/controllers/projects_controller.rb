@@ -5,14 +5,21 @@ load_and_authorize_resource
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.search(params[:searchbox])
-
+    
+    @projects = Project.all
     respond_to do |format|
 
       format.html # index.html.erb
 
     end
   end
+
+  def search
+    @projects = Project.search(params[:query])
+    render 'index'
+
+  end
+
 
   # GET /projects/1
   # GET /projects/1.json

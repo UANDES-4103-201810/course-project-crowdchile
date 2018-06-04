@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :promises
   root 'application#index'
+  post 'projects/search' => 'projects#search', as: 'search_projects' 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
