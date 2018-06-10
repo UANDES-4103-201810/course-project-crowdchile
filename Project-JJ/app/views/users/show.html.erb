@@ -29,6 +29,10 @@ table th {padding-top: 12px;
 
 </style>
 
+
+
+
+
 <div id="div1">
 <h1> User information </h1>
 <p id="notice"><%= notice %></p>
@@ -51,7 +55,8 @@ table th {padding-top: 12px;
 </p>
 <p>
 <strong>Description:</strong>
-  <%= @user.description %>
+	<%= raw Markdown.new(@user.description).to_html %> 
+  
 </p>
 <p>
 <strong>Age:</strong>
@@ -61,6 +66,7 @@ table th {padding-top: 12px;
 <strong>Country:</strong>
   <%= @user.country %>
 </p>
+
 
 <%- if current_user.try(:admin) or @user.id == current_user.try(:id) %>
 	<%= link_to 'Edit', edit_user_registration_path(@user) %>
