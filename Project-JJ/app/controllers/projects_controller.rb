@@ -14,8 +14,9 @@ load_and_authorize_resource
     end
   end
   def promises
-	@promises = Promises.all
+	@promises = Promise.where(:project_id => @project.id)
   end
+
  def promisesnew
 	
   end
