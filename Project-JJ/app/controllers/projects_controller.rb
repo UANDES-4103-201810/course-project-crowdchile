@@ -13,6 +13,12 @@ load_and_authorize_resource
 
     end
   end
+  def promises
+	@promises = Promises.all
+  end
+ def promisesnew
+	
+  end
 
   def search
     @projects = Project.search(params[:query])
@@ -20,10 +26,10 @@ load_and_authorize_resource
 
   end
 
-
   # GET /projects/1
   # GET /projects/1.json
   def show
+	@Suma = UserFundProject.where(:project_id => @project.id).sum(:amount)
   end
 
   # GET /projects/new
@@ -83,6 +89,6 @@ load_and_authorize_resource
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description, :donationamount, :category_id, :user_id, :deliverydate, :promise_id, :image)
+      params.require(:project).permit(:title, :description, :donationamount, :category_id, :user_id, :deliverydate, :promise_id, :image, :donation, :yourdonation)
     end
 end

@@ -46,7 +46,6 @@ div { width: 50%; height: 50%; float: left; }
   <h3> <strong>Deliverydate:</strong> <%= @project.deliverydate %> </h3>
   
 </p>
-
 <p>
   <strong>Promise:</strong>
   <%= @project.promise_id %>
@@ -55,17 +54,24 @@ div { width: 50%; height: 50%; float: left; }
   <strong>Donationamount:</strong>
   <%= @project.donationamount %>
 </p>
+  <strong>Donation:</strong>
+  <%= @Suma %>
+</p>
 
 </div>
 <div id="div4">
-  <%= image_tag @project.image.url(:large), :class => "style-image" %>
-  <td><%= button_to "Add project to wishlist", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
-  <td><%= button_to "Donate 1", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 1, :method => :"post" %>
-  <td><%= button_to "Donate 10", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 10, :method => :"post" %>
-  <td><%= button_to "Donate 20", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 20, :method => :"post" %>
-  <td><%= button_to "Donate 30", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => 100, :method => :"post" %>
- </td>
+<%= image_tag @project.image.url(:large), :class => "style-image" %>
 
+<%=form_tag(controller: 'user_fund_projects', action: 'create', method: 'post') do %>
+<%= hidden_field_tag :user_id, current_user.id %> 
+<%= hidden_field_tag :project_id, @project.id %>
+<%= number_field_tag :amount %>
+<%= submit_tag "Donation" %>   
+<% end %>
+
+  <td><%= button_to "Add project to wishlist", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
+  
+ 
 </div>
 
 
