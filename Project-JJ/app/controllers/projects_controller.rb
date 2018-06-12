@@ -90,6 +90,6 @@ load_and_authorize_resource
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description, :donationamount, :category_id, :user_id, :deliverydate, :promise_id, :image, :donation, :yourdonation)
+      params.require(:project).permit(:title, :description, :donationamount, :category_id, :user_id, :deliverydate, :promise_id, :image, :donation, :yourdonation, :mark)
     end
 end

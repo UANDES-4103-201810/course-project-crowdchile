@@ -14,13 +14,13 @@ Category.create(name: "Education")
 Category.create(name: "Ecologic")
 Category.create(name: "Sports")
 Category.create(name: "Food")
-Category.create(name: "Applications")
 Category.create(name: "Architecture")
+Category.create(name: "Applications")
 
 
 #Admin seeds
 user = User.new
-user.email = 'admin@example.com'
+user.email = 'admin@example1.com'
 user.password = 'admin123'
 user.password_confirmation = 'admin123'
 user.admin = true

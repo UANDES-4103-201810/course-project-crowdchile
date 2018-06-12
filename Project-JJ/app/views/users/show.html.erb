@@ -88,17 +88,16 @@ table th {padding-top: 12px;
 	      <th>Title</th>
 	      
 	      <th>Donationamount</th>
-	      <th>Category</th>
-	      	      
+	      <th>Category</th> 
 		<th> amount </th>
 		<th colspan="3"></th>
 	    </tr>
 	  </thead>
-  <tbody>
+  
     <% @user_fund_projects.each do |user_fund_projects| %>
       <tr>
 	<% if user_fund_projects.user_id == current_user.id %>
-	<table>
+	
 	  
 
 	  <tbody>
@@ -116,11 +115,10 @@ table th {padding-top: 12px;
 	    <% end %>
 		<% end %>
 	  </tbody>
-	</table>
+	
 		<% end %>
 	      </tr>
     <% end %>
-  </tbody>
 </table>
 
 

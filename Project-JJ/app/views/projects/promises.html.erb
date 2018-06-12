@@ -17,8 +17,11 @@
         <td><%= promise.description %></td>
         <td><%= promise.price %></td>
         <td><%= link_to 'Show', promise %></td>
+	<td><%= button_to "Buy", :controller => "user_fund_projects", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :amount => promise.price, :method => :"post" %>
+	<td><%- if current_user.id == @project.user_id %></td>
         <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
         <td><%= link_to 'Destroy', promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>

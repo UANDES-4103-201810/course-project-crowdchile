@@ -44,6 +44,14 @@
     <%= form.datetime_select :deliverydate %>
   </div>
 
+<% if user_signed_in? && current_user.admin %>
+    <div class="field">
+      <%= label_tag :outstanding %>
+	    <%= form.check_box :mark %>
+    </div>
+<%end%>
+
+
 
   <div class="actions">
     <%= form.submit %>

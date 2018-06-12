@@ -41,8 +41,8 @@ Rails.application.configure do
     port:587,
     domain:"domain.of.sender.net",
     authentication: "plain",
-    user_name:"dave",
-    password:"secret",
+    user_name:"crownfundingchile@gmail.com",
+    password:"rotundono",
     enable_starttls_auto: true
 }
 

@@ -58,7 +58,7 @@
         <td><%= project.deliverydate %></td>
         <td><%= project.promise_id %></td>
         <td><%= link_to 'Show', project %></td>
-	<% if project.user_id == current_user.try(:id) %>
+	<% if project.user_id == current_user.try(:id) or current_user.admin %> %>
         	<td><%= link_to 'Edit', edit_project_path(project) %></td>
         	<td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	<% end %>
