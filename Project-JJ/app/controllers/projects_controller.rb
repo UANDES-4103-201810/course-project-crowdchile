@@ -30,7 +30,7 @@ load_and_authorize_resource
   # GET /projects/1
   # GET /projects/1.json
   def show
-	@Suma = UserFundProject.where(:project_id => @project.id).sum(:amount)
+	@Suma = UserFundProject.where(:project_id => @project.id,:email_confirmed => true).sum(:amount)
   end
 
   # GET /projects/new

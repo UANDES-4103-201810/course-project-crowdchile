@@ -61,17 +61,17 @@ div { width: 50%; height: 50%; float: left; }
 </div>
 <div id="div4">
 <%= image_tag @project.image.url(:large), :class => "style-image" %>
-
+<%= link_to 'Check Promises', promisesp_path %>
+<% if @project.user_id == current_user.try(:id) %>
+<%= link_to 'Create a Promises', promisesnew_path %>
+<% end %>
 <%=form_tag(controller: 'user_fund_projects', action: 'create', method: 'post') do %>
-<%= hidden_field_tag :user_id, current_user.id %> 
+<%= hidden_field_tag :user_id, current_user.try(:id) %> 
 <%= hidden_field_tag :project_id, @project.id %>
 <%= number_field_tag :amount %>
 <%= submit_tag "Donation" %>   
 <% end %>
-
-  <td><%= button_to "Add project to wishlist", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
-  
- 
+<td><%= button_to "Add project to wishlist", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
 </div>
 
 

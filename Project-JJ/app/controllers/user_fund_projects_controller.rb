@@ -24,19 +24,32 @@ class UserFundProjectsController < ApplicationController
 
   # POST /user_fund_projects
   # POST /user_fund_projects.json
-  def create
+  def create  
     @user_fund_project = UserFundProject.new(user_fund_project_params)
 
-    respond_to do |format|
+    
       if @user_fund_project.save
-        format.html { redirect_to @user_fund_project, notice: 'User fund project was successfully created.' }
-        format.json { render :show, status: :created, location: @user_fund_project }
-      else
-        format.html { render :new }
-        format.json { render json: @user_fund_project.errors, status: :unprocessable_entity }
-      end
-    end
+	@user_fund_project.set_confirmation_token
+	@user_fund_project.save(validate: false)            
+	UseFundProjectMailer.registration_confirmation(current_user,@user_fund_project).deliver_now
+        flash[:success] = "Please confirm your email address to continue"
+	redirect_to root_url
+     else 
+     flash[:error] = "Invalid, please try again"
+     render :new
   end
+  end
+def confirm_email
+  user = UserFundProject.find_by_confirm_token(params[:token])
+   if user
+     user.validate_email
+     user.save(validate: false)
+     redirect_to user
+   else
+     flash[:error] = "Sorry. User does not exist"
+     redirect_to root_url
+ end
+end
 
   # PATCH/PUT /user_fund_projects/1
   # PATCH/PUT /user_fund_projects/1.json
@@ -62,7 +75,7 @@ class UserFundProjectsController < ApplicationController
     end
   end
 
-  private
+ 
     # Use callbacks to share common setup or constraints between actions.
     def set_user_fund_project
       @user_fund_project = UserFundProject.find(params[:id])

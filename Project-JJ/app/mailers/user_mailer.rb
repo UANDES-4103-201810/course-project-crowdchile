@@ -2,8 +2,7 @@ class UserMailer < ApplicationMailer
 default from: 'notifications@example.com'
  
   def welcome_email
-    @user = params[:user]
-    @url  = '/sign_in'
+    @user = current_user
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 end

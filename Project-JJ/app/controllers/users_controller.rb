@@ -11,7 +11,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   # GET /users/1.json
   def show
      @projects = Project.all
-	@user_fund_projects = UserFundProject.all
+	@user_fund_projects = UserFundProject.where(:email_confirmed => true)
 	
   end
 

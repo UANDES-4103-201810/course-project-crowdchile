@@ -10,6 +10,7 @@ class Ability
        else
 	 can :manage, User, user_id: user.id
 	 can :manage, Project, user_id: user.id
+	 can :promise, Project
          can :read, :all
        end
     #
