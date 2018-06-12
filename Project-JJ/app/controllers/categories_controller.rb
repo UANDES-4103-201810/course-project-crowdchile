@@ -6,7 +6,10 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
-
+  def search
+    @categories = Category.search(params[:query])
+    render 'index'
+  end
   # GET /categories/1
   # GET /categories/1.json
   def show
