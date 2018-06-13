@@ -1,45 +1,18 @@
 # README
 Juan Valdivieso and Juan Manuel Campos
 
-We managed to complete the following features:
+We managed to complete almost all features, without implementing correct CSS.
 
-Registered user
--Profile
--User projects
+The ones pending are:
 
-Admin user
--Users
--Categories
+The homepage doesnt show the best projects images
+Facebook button is duplicated
+It adds to wishlist twice
+Sometimes it crashed because of pending information
+Users do not acquire all information from their facebook profiles
+The admin must be seeded at the start
+The main projects must be seeded too
+We cannot search for projects in a specific category, just search in all categories together.
 
-2) Registered user
--Profile
--All projects (With searchbox inside of /projects)
--User projects (In user profile)
--Project categories
--Funded projects (In user profile)
 
-Admin user
--Users
--Projects
--Categories
 
-The admin user also has permission to delete and modify certain objects, as well as the user with his own objects.
-
-3) File controller
--Image upload
--Image download
-
-4) Extra features:
--Platform feedback (upon registration, creation of project, etc.)
--Basic version to fund a project (Not completely)
--Mark project as outstanding (only with boolean value)
-
-5) Bootstrap is integrated
-
-We could complete the following tasks:
--Project promises on users
--The outstanding projects must appear in the start page
--The funding isnt completely functional, lacks donating specific amount and progress bar, doesnt track donation progress
--The css is clearly not complete
--The edit buttons inside each profile which are used to edit the users own profile are blue and cant be seen, but they are present (right below user information)
--The admin user is present in the seed file
