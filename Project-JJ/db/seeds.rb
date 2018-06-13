@@ -20,7 +20,7 @@ Category.create(name: "Applications")
 
 #Admin seeds
 user = User.new
-user.email = 'admin@example221.com'
+user.email = 'admin@example.com'
 user.password = 'admin123'
 user.password_confirmation = 'admin123'
 user.admin = true

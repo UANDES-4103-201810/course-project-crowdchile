@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 load_and_authorize_resource
+skip_authorize_resource :only => :promises
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
@@ -15,6 +16,7 @@ load_and_authorize_resource
   end
   def promises
 	@promises = Promise.where(:project_id => @project.id)
+	
   end
 
  def promisesnew
