@@ -1,13 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.left {
+  left: 0;
+  
+}
+.claseimagen{
+vertical-align: middle;
+}
+
+
+.right {
+  right: 0;
+  
+}
+</style>
+</head>
+<body>
+<div class="split left">
 
 <h2>New User</h2>
-<body>
+<h2> Become part of our family: </h2>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   
 <div class="field">
-    <%= f.label :name %>
+    <%= f.label  :name %>
     <%= f.text_field :name %>
   </div>
 
@@ -27,17 +60,17 @@
   </div>
 
 <div class="field">
-    <%= f.label :telephone %><br />
+    <%= f.label :telephone %>
     <%= f.number_field :telephone %>
   </div>
 
 <div class="field">
-    <%= f.label :age %><br />
+    <%= f.label :age %>
     <%= f.number_field :age%>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -61,4 +94,17 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+
+<div class="split right">
+<h1> CrowdChile </h1>
+<h1> CrowdChile </h1>
+<p> CrowdChile is a website created to crowdfund the best projects all across the web, obviosly focusing on the best projects in the Chilean and Latin American Region </p>
+<p> Feel free to browse among a vast amount of categories and innovative projects, and help people all across the world to make their best ideas come true.</p>
+<p> Thank you for visiting CrowdChile! </p>
+<p> </p>
+<img src=http://lgblog.cl.s3.amazonaws.com/wp-content/uploads/2013/08/Que-es-el-crowdfunding.jpg class="claseimagen" >
+</div>
 </body>
+
+</html>

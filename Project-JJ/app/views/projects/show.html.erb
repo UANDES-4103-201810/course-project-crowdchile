@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<head>
 <style>
 
 
@@ -7,18 +9,40 @@ div { width: 50%; height: 50%; float: left; }
 #descriptiondiv { background: #3399FF; }
 #specificationsdiv { background: #66B2FF; }
 #div4 { background: #99CCFF; }
-#style-image {border-right: 1px solid #000;}
+.style-image { border-right: 10px; solid #000; margin:auto;}
+.linkbutton {background-color:black;
+box-shadow: 0 5px 0 grey;
+color: white;
+padding 1em 1.5em;
+position: relative;
+font-size: 40px;
+}
+.cornerbuttons {background-color: green;
+border-radius: 12px;
+font-size: 40px;
+color: white;
+cursor: pointer;
+}
+.donationbutton {background-color: green;
+border-radius: 12px;
+font-size: 40px;
+color: white;
+cursor: pointer;
+}
+
 
 
 </style>
+</head>
+<body>
 
 
 <div id="div1">
 <p id="notice"><%= notice %></p>
 
-<p>
   <h1> <strong>Project name:</strong> <%= @project.title %></h1>
 </p>
+<%= image_tag @project.image.url(:large), :class => "style-image" %>
 
 
 <%- if current_user.try(:id) == @project.user_id  or current_user.try(:admin?) %>
@@ -56,8 +80,8 @@ div { width: 50%; height: 50%; float: left; }
 
 </div>
 <div id="div4">
-<%= image_tag @project.image.url(:large), :class => "style-image" %>
-<%= link_to 'Check Promises', promisesp_path %>
+
+<%= link_to 'Check promises here.', promisesp_path, class: "linkbutton" %>
 <% if @project.user_id == current_user.try(:id) %>
 <%= link_to 'Create a Promises', promisesnew_path %>
 <% end %>
@@ -65,10 +89,14 @@ div { width: 50%; height: 50%; float: left; }
 <%= hidden_field_tag :user_id, current_user.try(:id) %> 
 <%= hidden_field_tag :project_id, @project.id %>
 <%= number_field_tag :amount %>
-<%= submit_tag "Donation" %>   
+<%= submit_tag "Donation", class: "donationbutton" %>   
 <% end %>
-<td><%= button_to "Add project to wishlist", :controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post" %> </td>
+<td><%= button_to "Add project to wishlist", {:controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post"}, {class: "cornerbuttons"} %> </td>
 </div>
+
+</body>
+
+</html>
 
 
 

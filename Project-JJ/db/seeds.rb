@@ -25,6 +25,7 @@ user.email = 'admin@example.com'
 user.password = 'admin123'
 user.password_confirmation = 'admin123'
 user.admin = true
+user.description = "Site admin"
 user.save!
 
 
