@@ -28,8 +28,17 @@ user.admin = true
 user.description = "Site admin"
 user.save!
 
+#Normal user seed
+user = User.new
+user.email = 'jcampos@miuandes.cl'
+user.password = 'abc12345'
+user.password_confirmation = 'abc12345'
+user.admin = false
+user.description = "Uandes student"
+user.save!
 
 
+#Outstanding projects seed
 rutaimagen= Rails.root + 'public/Cesme-700x400.jpg'
 imagendata = File.open(rutaimagen)
 project = Project.new
@@ -68,6 +77,21 @@ project.category_id = 1
 project.donationamount = 100
 project.deliverydate = Time.now
 project.save!
+
+#Normal project seed (to test outstanding feature)
+rutaimagen= Rails.root + 'public/music.jpg'
+imagendata = File.open(rutaimagen)
+project = Project.new
+project.title = "MusicMatch" 
+project.description = 'Featuring the best songs in the entire website, connect and share with your friends.'
+project.user_id = 2
+project.image = imagendata
+project.mark = false
+project.category_id = 1
+project.donationamount = 100
+project.deliverydate = Time.now
+project.save!
+
 
 
 

@@ -83,7 +83,7 @@ cursor: pointer;
 
 <%= link_to 'Check promises here.', promisesp_path, class: "linkbutton" %>
 <% if @project.user_id == current_user.try(:id) %>
-<%= link_to 'Create a Promises', promisesnew_path %>
+
 <% end %>
 <%=form_tag(controller: 'user_fund_projects', action: 'create', method: 'post') do %>
 <%= hidden_field_tag :user_id, current_user.try(:id) %> 
@@ -92,6 +92,7 @@ cursor: pointer;
 <%= submit_tag "Donation", class: "donationbutton" %>   
 <% end %>
 <td><%= button_to "Add project to wishlist", {:controller => "wishlists", :action => "create", :user_id => current_user.try(:id), :project_id => @project.id, :method => :"post"}, {class: "cornerbuttons"} %> </td>
+<%= link_to 'Create a Promise', promisesnew_path %>
 </div>
 
 </body>
