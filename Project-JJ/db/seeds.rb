@@ -29,37 +29,39 @@ user.save!
 
 
 
+rutaimagen= Rails.root + 'public/Cesme-700x400.jpg'
+imagendata = File.open(rutaimagen)
 project = Project.new
 project.title = "EasyVacation" 
 project.description = 'An easy and cheap way to go to the places you dream of. Hop on!'
 project.user_id = 1
-
+project.image = imagendata
 project.mark = true
 project.category_id = 1
 project.donationamount = 100
 project.deliverydate = Time.now
 project.save!
 
-
-
+rutaimagen= Rails.root + 'public/meerkat.jpg'
+imagendata = File.open(rutaimagen)
 project = Project.new
 project.title = "Save the meerkats" 
 project.description = 'Meerkats are endangered species from Africa. Help us with our project and help them with their lifestyle.'
 project.user_id = 1
-
+project.image = imagendata
 project.mark = true
 project.category_id = 1
 project.donationamount = 100
 project.deliverydate = Time.now
 project.save!
 
-
-
+rutaimagen= Rails.root + 'public/plo.jpg'
+imagendata = File.open(rutaimagen)
 project = Project.new
 project.title = "MobileMe" 
 project.description = 'Everyone in the world deserves to be connected. With MobileMe, it is easier to access all kinds of technology all around the world.'
 project.user_id = 1
-
+project.image = imagendata
 project.mark = true
 project.category_id = 1
 project.donationamount = 100
